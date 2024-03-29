@@ -69,13 +69,14 @@ const Cards = () => {
             {
                 character.map((item) => {
                     return (
-                        <div onClick={() => handleCardClick(item)} className="flex justify-center mt-10" key={item.name}>
-                            <Card
-                                image={item.image}
-                                name={item.name}
-                                species={item.species}
-                                gender={item.gender}
-                            />
+                        <div className="flex justify-center mt-10" key={item.name}>
+                                <Card
+                                    handleCardClick={handleCardClick}
+                                    image={item.image}
+                                    name={item.name}
+                                    species={item.species}
+                                    gender={item.gender}
+                                />
                         </div>
                     )
                 })
