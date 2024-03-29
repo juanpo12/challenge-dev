@@ -17,15 +17,6 @@ const Navbar = () => {
                 <img src="rickandmorty.png" alt="Rick and Morty" className="hidden sm:flex h-16" />
             </div>
         </div>
-        // <NavbarUi className="bg-violet-600">
-        //     <NavbarBrand>
-        //     </NavbarBrand>
-        //     <NavbarContent className="flex gap-4" justify="center">
-        //         <Searchbar/>
-        //     </NavbarContent>
-        //     <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        //     </NavbarContent>
-        // </NavbarUi>
     )
 }
 
