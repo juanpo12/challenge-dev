@@ -65,7 +65,7 @@ const Cards = () => {
     
     console.log(selectedCharacter);
     return(
-        <div className="sm:grid sm:grid-cols-4">
+        <div className="sm:grid sm:grid-cols-3 md:grid-cols-4">
             {
                 character.map((item) => {
                     return (

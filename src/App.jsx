@@ -1,4 +1,6 @@
+import CardAndFilterRender from './components/CardAndFilterRender'
 import Cards from './components/Cards'
+import Filters from './components/Filters'
 import Navbar from './components/navbar/Navbar'
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
   return (
     <div className='h-screen'>
       <Navbar/>
-      <Cards/>
+      <CardAndFilterRender/>
     </div>
   )
 }
