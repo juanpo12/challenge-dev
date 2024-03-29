@@ -15,3 +15,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('EduNSWACTFoundation-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Get Schwifty', sans-serif;
+}
