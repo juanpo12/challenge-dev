@@ -26,7 +26,6 @@ const Filters = ({filters, setFilters}) => {
                 <Select options={species} value={filters.species} placeholder="Species" setValue={(value) => setFilters({...filters, species: value})}/>
                 <Select options={gender} value={filters.gender} placeholder="Gender" setValue={(value) => setFilters({...filters, gender: value})}/>
                 <div className="flex w-full justify-center gap-2">
-                    <Button>Search</Button>
                     <Button onClick={cleanFilters}>Clear</Button>
                 </div>
             </div>
