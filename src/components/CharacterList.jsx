@@ -2,7 +2,7 @@ import { useState } from "react"
 import Card from "./Card"
 import Modal from "./Modal"
 
-const CharacterList = ({characters, loading, error}) => {
+const CharacterList = ({characters, loading}) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const [selectedCharacter, setSelectedCharacter] = useState({})
@@ -11,12 +11,13 @@ const CharacterList = ({characters, loading, error}) => {
         setSelectedCharacter(item);
         setIsOpen(true);
     };
-    
-    console.log(selectedCharacter);
+
+    console.log('selected',selectedCharacter);
     return(
         <div className="sm:grid sm:grid-cols-3 md:grid-cols-4">
             {
                 characters?.map((item) => {
+                    console.log('item',item);
                     return (
                         <div className="flex justify-center mt-10" key={item.name}>
                                 <Card
@@ -25,6 +26,7 @@ const CharacterList = ({characters, loading, error}) => {
                                     name={item.name}
                                     species={item.species}
                                     gender={item.gender}
+                                    origin={item.origin?.name}
                                     status={item.status}
                                 />
                         </div>
@@ -39,6 +41,7 @@ const CharacterList = ({characters, loading, error}) => {
                         <p className="text-lg">{selectedCharacter.species}</p>
                         <p className="text-lg">{selectedCharacter.gender}</p>
                         <p className="text-lg">{selectedCharacter.status}</p>
+                        <p className="text-lg">{selectedCharacter.origin}</p>
                     </div>
                 </Modal>
             )}
@@ -50,8 +53,6 @@ const CharacterList = ({characters, loading, error}) => {
                 </Modal> 
             }
             
-    
-
         </div>
     )
 }
