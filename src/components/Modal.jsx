@@ -9,7 +9,7 @@ const Modal = ({ children, setIsOpen, isOpen }) => {
                 onClick={() => setIsOpen(false)}
             >
                 <div
-                    className="bg-violet-600/70 p-4 rounded-xl"
+                    className="bg-violet-600/80 p-4 rounded-xl"
                     onClick={(e) => e.stopPropagation()} 
                 >
                     {children}
