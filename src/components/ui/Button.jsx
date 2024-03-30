@@ -9,7 +9,7 @@ const Button = ({ children, onClick, className, ...props }) => {
 
     return (
         <button
-            className={`${className} bg-violet-600/60 p-2 rounded-xl hover:cursor-pointer hover:scale-105`}
+            className={`${className} bg-violet-600/60 p-2 rounded-xl hover:cursor-pointer hover:scale-105 disabled:bg-violet-950`}
             onClick={onClick}
             {...props}
         >
