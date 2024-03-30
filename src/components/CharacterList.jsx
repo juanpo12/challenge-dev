@@ -12,6 +12,8 @@ const CharacterList = ({characters, loading}) => {
         setIsOpen(true);
     };
 
+    console.log('CANTIDAD', characters);
+
     console.log('selected',selectedCharacter);
     return(
         <div className="sm:grid sm:grid-cols-3 md:grid-cols-4">
@@ -46,11 +48,17 @@ const CharacterList = ({characters, loading}) => {
                 </Modal>
             )}
             {
-                loading && <Modal>
+                loading && 
                     <div className="text-center">
                         <h2 className="text-2xl font-bold mb-4">Loading...</h2>
                     </div>
-                </Modal> 
+            }
+            {
+                characters?.length === 0 && 
+                    <div className="text-center ">
+                        <h2 className="text-2xl font-bold mb-4">No characters found</h2>
+                    </div>
+                
             }
             
         </div>
