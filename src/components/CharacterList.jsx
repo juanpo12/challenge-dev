@@ -11,13 +11,13 @@ const CharacterList = ({characters, loading}) => {
         setSelectedCharacter(item);
         setIsOpen(true);
     };
+    
 
-    console.log('selected',selectedCharacter);
     return(
         <div className="sm:grid sm:grid-cols-3 md:grid-cols-4">
             {
                 characters?.map((item) => {
-                    console.log('item',item);
+                    
                     return (
                         <div className="flex justify-center mt-10" key={item.name}>
                                 <Card
@@ -46,13 +46,11 @@ const CharacterList = ({characters, loading}) => {
                 </Modal>
             )}
             {
-                loading && <Modal>
+                loading && 
                     <div className="text-center">
                         <h2 className="text-2xl font-bold mb-4">Loading...</h2>
                     </div>
-                </Modal> 
             }
-            
         </div>
     )
 }
