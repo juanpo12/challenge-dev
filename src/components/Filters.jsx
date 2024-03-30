@@ -13,7 +13,8 @@ const Filters = ({filters, setFilters}) => {
         setFilters({
             status: '',
             species: '',
-            gender: ''
+            gender: '',
+            name: ''
         })
     }
 
