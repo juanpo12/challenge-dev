@@ -14,6 +14,9 @@ const GET_CHARACTERS = gql`
         species
         gender
         status
+        origin {
+          name
+        }
       }
     }
   }
