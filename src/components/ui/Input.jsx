@@ -8,7 +8,7 @@ const Input = ({ type, value, setValue, placeholder, className, ...props }) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder={placeholder}
-            className={className}
+            className={`${className} rounded-full hover:border hover:border-violet-800 px-4 py-2 h-fit`}
             {...props}
         />
     )
