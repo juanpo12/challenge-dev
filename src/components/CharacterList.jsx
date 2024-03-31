@@ -11,15 +11,15 @@ const CharacterList = ({characters, loading}) => {
         setSelectedCharacter(item);
         setIsOpen(true);
     };
+    
 
-    console.log('selected',selectedCharacter);
     return(
-        <div className="sm:grid sm:grid-cols-3 md:grid-cols-4">
+        <div className="sm:grid sm:grid-cols-3 md:grid-cols-4 w-full">
             {
                 characters?.map((item) => {
-                    console.log('item',item);
+                    
                     return (
-                        <div className="flex justify-center mt-10" key={item.name}>
+                        <div className="flex justify-center mt-10" key={item.id}>
                                 <Card
                                     handleCardClick={handleCardClick}
                                     image={item.image}
@@ -46,13 +46,17 @@ const CharacterList = ({characters, loading}) => {
                 </Modal>
             )}
             {
-                loading && <Modal>
-                    <div className="text-center">
+                loading && 
+                    <div className="text-center mt-10">
                         <h2 className="text-2xl font-bold mb-4">Loading...</h2>
                     </div>
-                </Modal> 
             }
-            
+            {
+                characters?.length === 0 &&
+                    <div className="text-center mt-10">
+                        <h2 className="text-2xl font-bold mb-4">No characters found</h2>
+                    </div>
+            }
         </div>
     )
 }

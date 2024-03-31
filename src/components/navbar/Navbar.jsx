@@ -11,7 +11,7 @@ const Navbar = ({setFilters, filter}) => {
                 <Searchbar value={filter.name} setFilters={(e) => setFilters({...filter, name: e})}/>
             </div>
             <div className="justify-self-center">
-                <img src="rickandmorty.png" alt="Rick and Morty" className="hidden sm:flex h-16" />
+                <img src="rickandmorty.png" alt="Rick and Morty" className="hidden sm:flex w-28 h-16" />
             </div>
         </div>
     )

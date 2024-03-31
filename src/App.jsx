@@ -5,8 +5,14 @@ import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
 
 const GET_CHARACTERS = gql`
-  query GetCharacters($name: String, $status: String, $species: String, $gender: String) {
-    characters(filter: {name: $name, status: $status, species: $species, gender: $gender }) {
+  query GetCharacters($name: String, $status: String, $species: String, $gender: String, $page: Int!) {
+    characters(filter: {name: $name, status: $status, species: $species, gender: $gender}, page: $page) {
+      info {
+        count
+        pages
+        next
+        prev
+      }
       results {
         id
         name
@@ -27,24 +33,29 @@ function App() {
     name: '',
     status: '',
     species: '',
-    gender: ''
+    gender: '',
+    page: 1,
+  });
+
+  const { loading, error, data } = useQuery(GET_CHARACTERS, {
+    variables: {
+      ...filters,
+      page: filters.page
+    }
   });
 
   useEffect(() => {
-    
-    console.log(filters);
-  },[ filters ]);
-
-
-  const { loading, error, data } = useQuery(GET_CHARACTERS, {
-    variables: filters
-  });
+    setFilters(filters => ({
+      ...filters,
+      page: 1
+    }))
+  },[filters.name, filters.status, filters.species, filters.gender])
 
   return (
     <div className='h-screen'>
       <Navbar filter={filters} setFilters={setFilters}/>
-      <div className="flex flex-col md:flex-row">
-        <Filters filters={filters} setFilters={setFilters}/>
+      <div className="flex flex-col md:flex-row w-screen">
+        <Filters filters={filters} setFilters={setFilters} totalPages={data?.characters?.info.pages} loading={loading}/>
         <CharacterList characters={data?.characters?.results} loading={loading} error={error}/>
       </div>
     </div>
