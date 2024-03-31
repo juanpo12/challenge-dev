@@ -1,6 +1,6 @@
 # Desafío para Dev
 
-Nombre postulante: [TU NOMBRE]
+Nombre postulante: Juan Jose Diaz
 Link a la app en producción: [LINK DEL DEPLOY]
 
 ## Instrucciones
