@@ -1,32 +1,10 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/navbar/Navbar'
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
+import { GET_CHARACTERS } from './utils/queries';
 
-const GET_CHARACTERS = gql`
-  query GetCharacters($name: String, $status: String, $species: String, $gender: String, $page: Int!) {
-    characters(filter: {name: $name, status: $status, species: $species, gender: $gender}, page: $page) {
-      info {
-        count
-        pages
-        next
-        prev
-      }
-      results {
-        id
-        name
-        image
-        species
-        gender
-        status
-        origin {
-          name
-        }
-      }
-    }
-  }
-`;
 
 function App() {
   const [filters, setFilters] = useState({
