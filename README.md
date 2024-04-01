@@ -1,7 +1,7 @@
 # Desafío para Dev
 
 Nombre postulante: Juan Jose Diaz
-Link a la app en producción: [LINK DEL DEPLOY]
+Link a la app en producción: https://challenge-dev-ivory.vercel.app/
 
 ## Instrucciones
 
